@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="168 168 688 688">
+  <defs>
+    <!-- App tile -->
+    <radialGradient id="tileBg" cx="35%" cy="25%" r="90%">
+      <stop offset="0%" stop-color="#3a3a3a"/>
+      <stop offset="60%" stop-color="#1e1e1e"/>
+      <stop offset="100%" stop-color="#0e0e0e"/>
+    </radialGradient>
+
+    <linearGradient id="orangeBorder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EE8C28"/>
+      <stop offset="50%" stop-color="#FFB21A"/>
+      <stop offset="100%" stop-color="#E58D00"/>
+    </linearGradient>
+
+    <!-- Outer ring -->
+    <linearGradient id="ringWhite" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F7F5F1"/>
+      <stop offset="100%" stop-color="#D4D0CB"/>
+    </linearGradient>
+
+    <!-- Inner record surface -->
+    <radialGradient id="recordDark" cx="40%" cy="35%" r="90%">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="70%" stop-color="#171717"/>
+      <stop offset="100%" stop-color="#101010"/>
+    </radialGradient>
+
+    <!-- Orange ring accent (more orange, still clean) -->
+    <linearGradient id="orangeRing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFD36A"/>
+      <stop offset="55%" stop-color="#FFB21A"/>
+      <stop offset="100%" stop-color="#E58D00"/>
+    </linearGradient>
+
+    <!-- Soft shadow -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Clip for inner record -->
+    <clipPath id="clipRecord">
+      <circle cx="512" cy="512" r="220"/>
+    </clipPath>
+  </defs>
+
+  <!-- Tile -->
+  <g filter="url(#shadow)">
+    <rect x="168" y="168" width="688" height="688" rx="156" fill="url(#tileBg)"/>
+  </g>
+
+  <!-- Border (simple, premium) -->
+  <rect x="196" y="196" width="632" height="632" rx="142"
+        fill="none" stroke="url(#orangeBorder)" stroke-width="26"/>
+
+  <!-- Outer white ring -->
+  <circle cx="512" cy="512" r="280"
+          fill="none" stroke="url(#ringWhite)" stroke-width="34"/>
+
+  <!-- Inner record -->
+  <circle cx="512" cy="512" r="220" fill="url(#recordDark)"/>
+
+
+  <!-- Orange circle accent ring (adds orange without clutter) -->
+  <circle cx="512" cy="512" r="150"
+          fill="none" stroke="url(#orangeRing)" stroke-opacity="0.65" stroke-width="16"/>
+
+  <!-- Clean hub -->
+  <circle cx="512" cy="512" r="92" fill="#F2F0EC"/>
+  <circle cx="512" cy="512" r="38" fill="#111111"/>
+
+</svg>
