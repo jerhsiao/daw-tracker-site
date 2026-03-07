@@ -4,6 +4,8 @@ import {
   Shield,
   Lock,
   Database,
+  Terminal,
+  AlertTriangle,
   X,
 } from "lucide-react";
 import iconSvg from "../../imports/icon.svg";
@@ -105,6 +107,32 @@ export function Download() {
           </Card>
         </div>
 
+        <Card className="mb-8 border-amber-500/30 bg-amber-500/5">
+          <CardContent className="p-6">
+            <div className="flex gap-3">
+              <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" />
+              <div>
+                <h4 className="mb-1 font-semibold">Important: macOS Security Step Required</h4>
+                <p className="mb-3 text-sm text-muted-foreground">
+                  Because this app is not signed with an Apple Developer certificate (it costs $99/year),
+                  macOS will show a "damaged and can't be opened" error. The app is completely safe — it's
+                  open source and runs entirely on your machine. You just need to run one Terminal command
+                  after installing.
+                </p>
+                <div className="rounded-lg bg-background/80 p-3">
+                  <div className="mb-1 flex items-center gap-2 text-xs text-muted-foreground">
+                    <Terminal className="h-3.5 w-3.5" />
+                    Paste this into Terminal after dragging the app to Applications:
+                  </div>
+                  <code className="text-sm font-medium text-foreground">
+                    xattr -cr /Applications/Logic\ Pro\ Tracker.app
+                  </code>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         <Card className="mb-8">
           <CardHeader>
             <CardTitle>Installation</CardTitle>
@@ -128,10 +156,9 @@ export function Download() {
                   <span className="text-sm font-semibold text-primary">2</span>
                 </div>
                 <div>
-                  <h4 className="mb-1 font-semibold">Install & Launch</h4>
+                  <h4 className="mb-1 font-semibold">Open & Drag to Applications</h4>
                   <p className="text-sm text-muted-foreground">
-                    Open the .dmg and drag Logic Pro Tracker to your
-                    Applications folder. Launch from Launchpad or Applications.
+                    Open the .dmg file and drag Logic Pro Tracker into your Applications folder.
                   </p>
                 </div>
               </div>
@@ -141,10 +168,12 @@ export function Download() {
                   <span className="text-sm font-semibold text-primary">3</span>
                 </div>
                 <div>
-                  <h4 className="mb-1 font-semibold">Add Your Projects</h4>
+                  <h4 className="mb-1 font-semibold">Clear Gatekeeper Flag</h4>
                   <p className="text-sm text-muted-foreground">
-                    Go to Settings and add your Logic projects folder. Run a
-                    scan to import your project metadata.
+                    Open Terminal and run:{" "}
+                    <code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+                      xattr -cr /Applications/Logic\ Pro\ Tracker.app
+                    </code>
                   </p>
                 </div>
               </div>
@@ -154,12 +183,10 @@ export function Download() {
                   <span className="text-sm font-semibold text-primary">4</span>
                 </div>
                 <div>
-                  <h4 className="mb-1 font-semibold">
-                    Grant Automation Permission
-                  </h4>
+                  <h4 className="mb-1 font-semibold">Launch & Grant Permissions</h4>
                   <p className="text-sm text-muted-foreground">
-                    Enable Automation in System Settings for reliable project
-                    detection and transport state monitoring.
+                    Open from Applications or Launchpad. Grant Automation permission in
+                    System Settings when prompted for reliable project detection.
                   </p>
                 </div>
               </div>
