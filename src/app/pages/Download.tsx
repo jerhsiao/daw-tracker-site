@@ -25,7 +25,7 @@ export function Download() {
 
   const handleSkipToDownload = () => {
     setShowTipModal(false);
-    window.location.href = "https://github.com/jerhsiao/daw-tracker-site/releases/download/v0.1.0/rw.848.Logic.Pro.Tracker_0.1.0_x64.dmg";
+    window.location.href = "https://github.com/jerhsiao/daw-tracker-site/releases/download/v0.1.0/Logic_Pro_Tracker_0.1.0.dmg";
   };
 
   return (
