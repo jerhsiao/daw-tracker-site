@@ -13,6 +13,10 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             Local-first session tracking for Logic Pro. No telemetry. No cloud.
           </p>
+
+          <p className="text-sm text-muted-foreground">
+            Built by Jeremy JX Hsiao &middot; v1.0.0
+          </p>
         </div>
       </div>
     </footer>
