@@ -18,8 +18,14 @@ import {
   CardTitle,
 } from "../components/ui/card";
 
+const DEFAULT_DMG_URL =
+  "https://github.com/jerhsiao/daw-tracker-site/releases/latest/download/Logic_Pro_Tracker.dmg";
+
 export function Download() {
   const [showTipModal, setShowTipModal] = useState(false);
+  const dmgUrl =
+    (import.meta.env.VITE_DMG_URL as string | undefined)?.trim() ||
+    DEFAULT_DMG_URL;
 
   const handleDownload = () => {
     setShowTipModal(true);
@@ -27,7 +33,7 @@ export function Download() {
 
   const handleSkipToDownload = () => {
     setShowTipModal(false);
-    window.location.href = "https://github.com/jerhsiao/daw-tracker-site/releases/download/v1.0.0/Logic_Pro_Tracker_1.0.0.dmg";
+    window.location.href = dmgUrl;
   };
 
   return (
