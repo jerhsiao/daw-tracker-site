@@ -43,9 +43,9 @@ const featureCards: FeatureCard[] = [
   },
   {
     icon: Sparkles,
-    title: "Activity Insights",
+    title: "Insights & Export",
     description:
-      "Heatmaps, progress charts, and time breakdowns that show when and how you produce.",
+      "Heatmaps, progress charts, and time breakdowns. Export session timesheets to CSV for easy invoicing.",
   },
   {
     icon: Shield,

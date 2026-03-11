@@ -43,6 +43,11 @@ const featureTabs: FeatureTab[] = [
         description:
           "Spot productivity patterns across the week and identify your strongest hours.",
       },
+      {
+        title: "Billing Export",
+        description:
+          "Export session timesheets to CSV with duration, active time, project stage, and notes for easy invoicing.",
+      },
     ],
   },
   {
@@ -176,7 +181,7 @@ function FeatureSection({ tab }: { tab: FeatureTab }) {
       </div>
 
       <div
-        className={`grid gap-4 ${tab.highlights.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3"}`}
+        className={`grid gap-4 ${tab.highlights.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}
       >
         {tab.highlights.map((highlight) => (
           <div
